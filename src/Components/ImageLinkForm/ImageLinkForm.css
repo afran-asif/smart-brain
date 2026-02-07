@@ -1,0 +1,26 @@
+.form {
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 20px 30px -10px rgba(38, 57, 77, 0.5);
+
+  background:
+  linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+  linear-gradient(63deg, transparent 74%, #999 78%),
+  linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+  #444;
+  background-size: 16px 48px;
+}
+
+input {
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}

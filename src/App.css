@@ -1,0 +1,21 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+/* পার্টিকেল ব্যাকগ্রাউন্ডের জন্য এটি সেট করো */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}

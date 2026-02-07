@@ -1,0 +1,11 @@
+.Tilt {
+    background: linear-gradient(89deg, #51b9ff 0%, #1f2572 100%);
+}
+/* src/Components/Logo/Logo.css */
+
+
+.Tilt-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
