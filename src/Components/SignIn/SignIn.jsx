@@ -28,9 +28,9 @@ class SignIn extends Component{
         })
         .then( res => res.json())
         .then(data =>{
-            if(data.user.id && data.token){
+            if(data.user && data.token){
                 localStorage.setItem('token', data.token);
-                this.props.loadUser(user);
+                this.props.loadUser(data.user);
                 this.props.onRouteChange('home');
             }
         })
