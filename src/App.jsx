@@ -9,6 +9,7 @@ import './App.css';
 import ParticlesBg from 'particles-bg'
 import SignIn from './Components/SignIn/SignIn';
 import Register from './Components/Register/Register';
+const token = localStorage.getItem('token');
 
 // const USER_ID = 'clarifai'; 
 // const APP_ID = 'main';
@@ -89,7 +90,10 @@ class App extends Component {
 
     fetch('https://smart-brain-api-5tsv.onrender.com/imageUrl',{
       method: 'post',
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
       body: JSON.stringify({
         input: this.state.input
       })
