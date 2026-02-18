@@ -27,8 +27,8 @@ class SignIn extends Component{
             })
         })
         .then( res => res.json())
-        .then(user =>{
-            if(user.id && user.token){
+        .then(data =>{
+            if(data.user.id && data.token){
                 localStorage.setItem('token', Data.token);
                 this.props.loadUser(user);
                 this.props.onRouteChange('home');
