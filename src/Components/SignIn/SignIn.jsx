@@ -32,8 +32,11 @@ class SignIn extends Component{
                 localStorage.setItem('token', data.token);
                 this.props.loadUser(data.user);
                 this.props.onRouteChange('home');
+            }else {
+                console.log("Login failed:", data);
             }
         })
+        .catch(err => console.log("Error in signin:", err))
     }
 
 
