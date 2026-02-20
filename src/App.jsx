@@ -9,7 +9,6 @@ import './App.css';
 import ParticlesBg from 'particles-bg'
 import SignIn from './Components/SignIn/SignIn';
 import Register from './Components/Register/Register';
-const token = localStorage.getItem('token');
 
 // const USER_ID = 'clarifai'; 
 // const APP_ID = 'main';
@@ -87,7 +86,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-
+    const token = localStorage.getItem('token')
     fetch('https://smart-brain-api-5tsv.onrender.com/imageUrl',{
       method: 'post',
       headers: {
@@ -104,7 +103,10 @@ class App extends Component {
         if (result) {
           fetch('https://smart-brain-api-5tsv.onrender.com/image',{
             method: 'put',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({
               id: this.state.user.id
             })
@@ -115,7 +117,7 @@ class App extends Component {
           })
           .catch(err => console.log('Error updating count',err))
           let faceBox;
-          if(result && result.outputs && data.outputs[0].data.regions){
+          if(result && result.outputs && result.outputs[0].data.regions){
             faceBox = this.calculateFaceLocation(result)
           }
           if(faceBox){
